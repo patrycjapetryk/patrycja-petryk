@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Nimbus Sans D OT Bold';
+  font-style: normal;
+  font-weight: normal;
+  src:
+    local('Nimbus Sans D OT Bold'),
+    url('/fonts/Nimbus-Sans-D-OT-Bold.woff') format('woff');
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}

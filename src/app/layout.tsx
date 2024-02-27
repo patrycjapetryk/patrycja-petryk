@@ -1,5 +1,7 @@
-import { PrismicPreview } from "@prismicio/next";
-import { repositoryName } from "@/prismicio";
+import './globals.css';
+
+import { PrismicPreview } from '@prismicio/next';
+import { repositoryName } from '@/prismicio';
 
 export default function RootLayout({
   children,
@@ -8,7 +10,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className="leading-tighter max-w-[1200px] font-sans text-xl tracking-tight">
         {children}
         <PrismicPreview repositoryName={repositoryName} />
       </body>
