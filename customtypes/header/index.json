@@ -1,0 +1,32 @@
+{
+  "format": "custom",
+  "id": "header",
+  "label": "Header",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "name": {
+        "type": "Text",
+        "config": {
+          "label": "name",
+          "placeholder": ""
+        }
+      },
+      "title": {
+        "type": "Text",
+        "config": {
+          "label": "title",
+          "placeholder": ""
+        }
+      },
+      "mail": {
+        "type": "Text",
+        "config": {
+          "label": "mail",
+          "placeholder": ""
+        }
+      }
+    }
+  }
+}

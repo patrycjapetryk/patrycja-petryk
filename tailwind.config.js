@@ -11,8 +11,31 @@ module.exports = {
       fontFamily: {
         sans: ['Nimbus Sans D OT Bold', 'Helvetica', 'Arial', 'sans-serif'],
       },
-      lineHeight: {
-        tighter: '1.2',
+      fontSize: {
+        md: [
+          '1.14rem',
+          {
+            lineHeight: '1.2',
+            letterSpacing: '-0.025em',
+          },
+        ],
+        lg: [
+          '1.22rem',
+          {
+            lineHeight: '1.2',
+            letterSpacing: '-0.025em',
+          },
+        ],
+        xl: [
+          '1.34rem',
+          {
+            lineHeight: '1.2',
+            letterSpacing: '-0.028em',
+          },
+        ],
+      },
+      screens: {
+        xs: '400px',
       },
     },
   },
