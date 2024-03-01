@@ -7,7 +7,7 @@ export default async function Header() {
   const { name, title, mail } = header.data;
 
   return (
-    <header className="sm:flex-row mb-10 flex flex-col justify-between gap-4 text-lg xs:text-xl">
+    <header className="sm:flex-row mb-10 flex flex-col justify-between gap-3 text-lg xs:text-xl">
       <h1>
         <Link href="/">
           <span>{name}</span> <span>{title}</span>

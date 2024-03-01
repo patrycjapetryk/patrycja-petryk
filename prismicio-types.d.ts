@@ -194,6 +194,16 @@ export type AllDocumentTypes = FooterDocument | HeaderDocument | PageDocument;
  */
 export interface RichTextSliceDefaultPrimary {
   /**
+   * Title field in *RichText → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: rich_text.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
    * Content field in *RichText → Primary*
    *
    * - **Field Type**: Rich Text
