@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-
 import type { Content } from '@prismicio/client';
 import {
   PrismicRichText,
@@ -31,7 +30,7 @@ export default function RichText({ slice }: RichTextProps) {
   return (
     <section className="lg:first-of-type:mt-0 ml-[20%] first-of-type:ml-0 first-of-type:mt-14">
       <h2
-        className="lg:ml-24 mb-6 ml-14 mt-9 cursor-pointer text-lg xs:text-xl"
+        className={`lg:ml-24 mb-6 ml-14 mt-9 cursor-pointer text-lg transition-[color] duration-300 ease-in-out hover:text-zinc-400 xs:text-xl ${openArticle && 'text-zinc-400'}`}
         onClick={handleTitleClick}
       >
         {title}

@@ -115,7 +115,10 @@ export type HeaderDocument<Lang extends string = string> =
     Lang
   >;
 
-type PageDocumentDataSlicesSlice = RichTextSlice;
+type PageDocumentDataSlicesSlice =
+  | ProjectsSlice
+  | WebsitesSlice
+  | RichTextSlice;
 
 /**
  * Content for Page documents
@@ -190,6 +193,71 @@ export type PageDocument<Lang extends string = string> =
 export type AllDocumentTypes = FooterDocument | HeaderDocument | PageDocument;
 
 /**
+ * Primary content in *Projects → Items*
+ */
+export interface ProjectsSliceDefaultItem {
+  /**
+   * Name field in *Projects → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projects.items[].name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  name: prismic.KeyTextField;
+
+  /**
+   * Description field in *Projects → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projects.items[].description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Video field in *Projects → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projects.items[].video
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  video: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for Projects Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ProjectsSliceDefault = prismic.SharedSliceVariation<
+  'default',
+  Record<string, never>,
+  Simplify<ProjectsSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *Projects*
+ */
+type ProjectsSliceVariation = ProjectsSliceDefault;
+
+/**
+ * Projects Shared Slice
+ *
+ * - **API ID**: `projects`
+ * - **Description**: Projects
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ProjectsSlice = prismic.SharedSlice<
+  'projects',
+  ProjectsSliceVariation
+>;
+
+/**
  * Primary content in *RichText → Primary*
  */
 export interface RichTextSliceDefaultPrimary {
@@ -244,6 +312,86 @@ export type RichTextSlice = prismic.SharedSlice<
   RichTextSliceVariation
 >;
 
+/**
+ * Primary content in *Websites → Primary*
+ */
+export interface WebsitesSliceDefaultPrimary {
+  /**
+   * Title field in *Websites → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: websites.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *Websites → Items*
+ */
+export interface WebsitesSliceDefaultItem {
+  /**
+   * Name field in *Websites → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: websites.items[].name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  name: prismic.KeyTextField;
+
+  /**
+   * Image field in *Websites → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: websites.items[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Video field in *Websites → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: websites.items[].video
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  video: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for Websites Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type WebsitesSliceDefault = prismic.SharedSliceVariation<
+  'default',
+  Simplify<WebsitesSliceDefaultPrimary>,
+  Simplify<WebsitesSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *Websites*
+ */
+type WebsitesSliceVariation = WebsitesSliceDefault;
+
+/**
+ * Websites Shared Slice
+ *
+ * - **API ID**: `websites`
+ * - **Description**: Websites
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type WebsitesSlice = prismic.SharedSlice<
+  'websites',
+  WebsitesSliceVariation
+>;
+
 declare module '@prismicio/client' {
   interface CreateClient {
     (
@@ -263,10 +411,19 @@ declare module '@prismicio/client' {
       PageDocumentData,
       PageDocumentDataSlicesSlice,
       AllDocumentTypes,
+      ProjectsSlice,
+      ProjectsSliceDefaultItem,
+      ProjectsSliceVariation,
+      ProjectsSliceDefault,
       RichTextSlice,
       RichTextSliceDefaultPrimary,
       RichTextSliceVariation,
       RichTextSliceDefault,
+      WebsitesSlice,
+      WebsitesSliceDefaultPrimary,
+      WebsitesSliceDefaultItem,
+      WebsitesSliceVariation,
+      WebsitesSliceDefault,
     };
   }
 }

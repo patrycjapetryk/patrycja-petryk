@@ -5,10 +5,6 @@ export default async function Footer() {
   const client = createClient();
   const footer = await client.getSingle('footer');
 
-  // console.log(footer.data.menu);
-
-  // const { name, title, mail } = footer.data;
-
   return (
     <footer className="fixed bottom-4 right-[20%]">
       <ul className="flex gap-2 text-lg xs:text-xl">

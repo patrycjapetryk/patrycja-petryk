@@ -1,0 +1,44 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"name",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "appearance",
+							"type": "Text"
+						}
+					],
+					[
+						"description",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Anim irure ullamco do ullamco elit commodo enim aute est. Irure ea adipisicing anim proident in magna minim minim sint. Incididunt est dolor elit ex dolore ad."
+									}
+								}
+							]
+						}
+					],
+					[
+						"video",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "real",
+							"type": "Text"
+						}
+					]
+				]
+			}
+		]
+	}
+]
