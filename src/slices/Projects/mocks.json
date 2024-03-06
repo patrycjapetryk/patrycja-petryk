@@ -2,7 +2,13 @@
 	{
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
-		"primary": {},
+		"primary": {
+			"title": {
+				"__TYPE__": "FieldContent",
+				"value": "bee",
+				"type": "Text"
+			}
+		},
 		"items": [
 			{
 				"__TYPE__": "GroupItemContent",
@@ -34,6 +40,14 @@
 						{
 							"__TYPE__": "FieldContent",
 							"value": "real",
+							"type": "Text"
+						}
+					],
+					[
+						"link",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "most",
 							"type": "Text"
 						}
 					]

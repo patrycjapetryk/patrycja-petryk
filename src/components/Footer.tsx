@@ -7,7 +7,7 @@ export default async function Footer() {
 
   return (
     <footer className="fixed bottom-4 right-[20%]">
-      <ul className="flex gap-2 text-lg xs:text-xl">
+      <ul className="flex gap-2 text-md xs:text-xl">
         {footer.data.menu.map((item, index) => {
           return (
             <li key={index}>

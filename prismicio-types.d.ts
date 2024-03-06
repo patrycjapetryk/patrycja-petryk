@@ -193,6 +193,21 @@ export type PageDocument<Lang extends string = string> =
 export type AllDocumentTypes = FooterDocument | HeaderDocument | PageDocument;
 
 /**
+ * Primary content in *Projects → Primary*
+ */
+export interface ProjectsSliceDefaultPrimary {
+  /**
+   * Title field in *Projects → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projects.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+}
+
+/**
  * Primary content in *Projects → Items*
  */
 export interface ProjectsSliceDefaultItem {
@@ -225,6 +240,16 @@ export interface ProjectsSliceDefaultItem {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   video: prismic.KeyTextField;
+
+  /**
+   * Link field in *Projects → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projects.items[].link
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  link: prismic.KeyTextField;
 }
 
 /**
@@ -236,7 +261,7 @@ export interface ProjectsSliceDefaultItem {
  */
 export type ProjectsSliceDefault = prismic.SharedSliceVariation<
   'default',
-  Record<string, never>,
+  Simplify<ProjectsSliceDefaultPrimary>,
   Simplify<ProjectsSliceDefaultItem>
 >;
 
@@ -412,6 +437,7 @@ declare module '@prismicio/client' {
       PageDocumentDataSlicesSlice,
       AllDocumentTypes,
       ProjectsSlice,
+      ProjectsSliceDefaultPrimary,
       ProjectsSliceDefaultItem,
       ProjectsSliceVariation,
       ProjectsSliceDefault,
