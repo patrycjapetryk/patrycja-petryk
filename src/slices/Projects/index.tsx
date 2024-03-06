@@ -64,9 +64,15 @@ const Projects = ({ slice }: ProjectsProps): JSX.Element => {
                       ),
                     }}
                   />
-                  <a href="item.link" className="my-5 block indent-14">
-                    {item.link}
-                  </a>
+                  {item.link && (
+                    <a
+                      href={item.link}
+                      target="_blank"
+                      className="my-5 block indent-14"
+                    >
+                      {item.link}
+                    </a>
+                  )}
                 </div>
 
                 {openWebsite === index + 1 && (
