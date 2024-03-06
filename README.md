@@ -6,12 +6,11 @@
 This is my portfolio website. It was built using Typescript, Next.js, Tailwind CSS, and Prismic Headless CMS.
 
 - **Online version**: [patrycjapetryk.com](https://patrycjapetryk.com)
-.com)
 
 
 &nbsp;
 
-Built on:
+It is built on:
 
 
 # Prismic + Next.js Minimal TypeScript Starter
