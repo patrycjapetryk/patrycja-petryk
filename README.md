@@ -1,3 +1,19 @@
+
+![patrycjapetryk](https://github.com/patrycjapetryk/patrycja-petryk/assets/51820512/4d4c60ce-c97c-473f-8189-a8489bee1ba8)
+
+# My portfolio Website
+
+This is my portfolio website. It was built using Typescript, Next.js, Tailwind CSS, and Prismic Headless CMS.
+
+- **Online version**: [patrycjapetryk.com](https://patrycjapetryk.com)
+.com)
+
+
+&nbsp;
+
+Built on:
+
+
 # Prismic + Next.js Minimal TypeScript Starter
 
 Want to quickly get started building your own project with [Prismic][prismic], [Next.js][nextjs], and TypeScript? This project includes basic configurations and nothing else. The project includes one Rich Text Slice, a homepage, and a dynamic page.
